@@ -243,12 +243,6 @@
                             <constraint firstItem="uK7-Wi-36i" firstAttribute="trailing" secondItem="th3-Dd-6mB" secondAttribute="trailing" id="s5H-CN-D37"/>
                             <constraint firstItem="th3-Dd-6mB" firstAttribute="leading" secondItem="uK7-Wi-36i" secondAttribute="leading" id="vsE-5k-S1B"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="hZG-NP-ap3"/>
-                                <exclude reference="1or-OR-FZC"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Вопрос №" id="fbR-LW-4jx"/>
                 </viewController>
