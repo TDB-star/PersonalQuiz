@@ -14,7 +14,7 @@ struct Question {
     
     static func getQuestions() -> [Question] {
         [
-            Question(title: "Какую пищу предпочитаете?", type: .single, answers: [           Answer(title: "Стейк", type: .dog),
+            Question(title: "Какую пищу предпочитаете?", type: .single, answers: [Answer(title: "Стейк", type: .dog),
                 Answer(title: "Рыба", type:.cat),
                 Answer(title: "Морковь", type: .rabbit),
                 Answer(title: "Кукуруза", type: .turtle)]),

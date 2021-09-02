@@ -29,31 +29,31 @@ class QuestionViewController: UIViewController {
             rangeSlider.value = answerCount / 2
             rangeSlider.maximumValue = answerCount
         }
-        
     }
     
     private let questions = Question.getQuestions()
     private var questionIndex = 0
-    private var currentAnswers: [Answer] {
+    private var currentAnswers: [Answer] { // вычисляемое св-во на основе только что объявленных свойств
         questions[questionIndex].answers
     }
-    private var answerChooser: [Answer] = []
+    private var answerChooser: [Answer] = [] // массив для запоминания выбора пользователя
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         
     }
-    
-    
-    @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
-        guard let buttonIndex = singleButtons.firstIndex(of: sender) else { return }
-        let currentAnswer = currentAnswers[buttonIndex]
-        answerChooser.append(currentAnswer)
-        nextQuestion()
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? ResultsViewController else {return}
+        vc.answerChoosen = answerChooser
     }
     
+    @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
+        guard let buttonIndex = singleButtons.firstIndex(of: sender) else { return } // определяем индекс нажатой пользователем кнопки с //помощью метода firstIndex(of: sender) - это первый попавшийся индекс кнопки на кот нажал пользователь
+        let currentAnswer = currentAnswers[buttonIndex]
+        answerChooser.append(currentAnswer) // ответ по  найденному индексу добавляем в массив
+        nextQuestion()
+    }
     
     @IBAction func multipleAnswerButtonPressed() {
         for (multipleSwitch, answer) in zip(multipleSwitches, currentAnswers) {
@@ -65,17 +65,19 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func rangeAnswerButtonPressed(_ sender: Any) {
-        let index = lrintf(rangeSlider.value)
+        let index = lrintf(rangeSlider.value) // функцией lrintf приводим значение Float k Int
         answerChooser.append(currentAnswers[index])
         nextQuestion()
     }
 }
 
 extension QuestionViewController {
+    
     private func setupUI() {
         for stackView in [singleStackView, multipleStackView, rangeStackView] {
             stackView?.isHidden = true
         }
+        
         let currentQuestion = questions[questionIndex]
         questionLabel.text = currentQuestion.title
         
@@ -86,6 +88,7 @@ extension QuestionViewController {
         
         showCurrentAnswers(for: currentQuestion.type)
     }
+    
     private func showCurrentAnswers(for type: ResponseType) {
         switch type {
         
@@ -94,6 +97,7 @@ extension QuestionViewController {
         case .ranged: showRangeStackView(with: currentAnswers)
         }
     }
+    
     private func showSingleStackView(with answers: [Answer]) {
         singleStackView.isHidden = false
         for (button, answer) in zip(singleButtons, answers) {
