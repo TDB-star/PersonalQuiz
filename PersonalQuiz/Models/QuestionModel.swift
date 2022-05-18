@@ -14,21 +14,22 @@ struct Question {
     
     static func getQuestions() -> [Question] {
         [
-            Question(title: "Какую пищу предпочитаете?", type: .single, answers: [Answer(title: "Стейк", type: .dog),
-                Answer(title: "Рыба", type:.cat),
-                Answer(title: "Морковь", type: .rabbit),
-                Answer(title: "Кукуруза", type: .turtle)]),
-            Question(title: "Что вам нравится больше?", type: .multiple, answers: [Answer(title: "Плавать", type: .dog),
-                Answer(title: "Спать", type: .cat),
-                Answer(title: "Обниматься", type: .rabbit),
-                Answer(title: "Есть", type: .turtle)]),
-            Question(title: "Любите ли вы поездки на машине?", type: .ranged, answers: [Answer(title: "Ненавижу", type: .cat),
-                Answer(title: "Нервничаю", type: .turtle),
-                Answer(title: "Не замечаю", type: .rabbit),
-                Answer(title: "Обожаю", type: .dog)])
+            Question(title: "What kind of food do you like to eat?", type: .single, answers: [Answer(title: "Steak", type: .dog),
+                Answer(title: "Fish", type:.cat),
+                Answer(title: "Carrots", type: .rabbit),
+                Answer(title: "Kukuru", type: .turtle)]),
+            Question(title: "What do you like best?", type: .multiple, answers: [Answer(title: "Swim", type: .dog),
+                Answer(title: "Sleep", type: .cat),
+                Answer(title: "Embrace", type: .rabbit),
+                Answer(title: "Eat", type: .turtle)]),
+            Question(title: "Do you like traveling by car?", type: .ranged, answers: [Answer(title: "I hate it", type: .cat),
+                Answer(title: "Nerving", type: .turtle),
+                Answer(title: "I don't notice", type: .rabbit),
+                Answer(title: "I love it", type: .dog)])
         ]
     }
 }
+
 struct Answer {
     let title: String
     let type: AnimalType
@@ -49,13 +50,13 @@ case cat = "🐱"
     var definition: String {
         switch self {
         case .dog:
-            return "Вам нравится быть с друзьями, Вы окружаете себя людьми, которые вам нравятся и всегда готовы помочь."
+            return "Dogs waiting for their frends to add them back to the group chat after they left dramatically."
         case .cat:
-            return "Вы себе на уме. Любите гулять сами по себе. Вы цените одиночество."
+            return "Though seemingly detached, Cats are attracted to witty and smart people. If you are a friend with Cats, consider it a compliment!"
         case .rabbit:
-            return "Вам нравится всё мягкое. Вы здоровы и полны энергии."
+            return "One good point about Rabbits is their generosity. Another good point is that they are very enthusiastic. And one bad point about Rabbits is that what they are most enthusiastically generous with is in fact other people’s stuff."
         case .turtle:
-            return "Ваша сила - в мудрости. Медленный и вдумчивый выигрывает на больших дистанциях."
+            return "Turtles are artistic people who daydream a lot. Their daydreaming has resulted in some of the world’s greatest works of art – and worst traffic accidents. The Highway Code actually suggests that if you find yourself driving behind a Turtle, you should honk your horn loudly at least every 15 seconds as a basic precaution.."
         }
     }
 }

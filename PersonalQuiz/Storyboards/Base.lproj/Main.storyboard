@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,18 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lqU-Fk-Tfk">
-                                <rect key="frame" x="21" y="240" width="278.5" height="88"/>
+                                <rect key="frame" x="23.5" y="243.5" width="273" height="81.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Какое вы животное?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3d-LK-idT">
-                                        <rect key="frame" x="0.0" y="0.0" width="278.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What kind of animal are you?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3d-LK-idT">
+                                        <rect key="frame" x="0.0" y="0.0" width="273" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEl-xO-uQJ">
-                                        <rect key="frame" x="76" y="52" width="126" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Начать опрос"/>
+                                        <rect key="frame" x="76" y="42.5" width="121" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Start the poll"/>
                                         <connections>
                                             <segue destination="XLe-EI-Fwk" kind="presentation" modalPresentationStyle="fullScreen" id="FsM-LM-Fvk"/>
                                         </connections>
@@ -82,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="-932" y="65"/>
         </scene>
-        <!--Вопрос №-->
+        <!--Question №-->
         <scene sceneID="lLB-KB-Ela">
             <objects>
                 <viewController id="nK0-4A-8aB" customClass="QuestionViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,7 +185,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCa-N5-cE0">
                                         <rect key="frame" x="0.0" y="188" width="280" height="30"/>
-                                        <state key="normal" title="Ответить"/>
+                                        <state key="normal" title="Done"/>
                                         <connections>
                                             <action selector="multipleAnswerButtonPressed" destination="nK0-4A-8aB" eventType="touchUpInside" id="cQh-G7-Hha"/>
                                         </connections>
@@ -216,7 +217,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XV8-Vp-kkm">
                                         <rect key="frame" x="0.0" y="82.5" width="280" height="30"/>
-                                        <state key="normal" title="Ответить"/>
+                                        <state key="normal" title="Done"/>
                                         <connections>
                                             <action selector="rangeAnswerButtonPressed:" destination="nK0-4A-8aB" eventType="touchUpInside" id="onp-mo-Jbl"/>
                                         </connections>
@@ -262,7 +263,7 @@
                             <constraint firstItem="th3-Dd-6mB" firstAttribute="leading" secondItem="uK7-Wi-36i" secondAttribute="leading" id="vsE-5k-S1B"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="fbR-LW-4jx"/>
+                    <navigationItem key="navigationItem" title="Question №" id="fbR-LW-4jx"/>
                     <connections>
                         <outlet property="multipleStackView" destination="1or-OR-FZC" id="i3M-Q0-qXW"/>
                         <outlet property="questionLabel" destination="nfs-hf-cix" id="IVq-Sw-nZV"/>
@@ -291,7 +292,7 @@
             </objects>
             <point key="canvasLocation" x="570" y="64"/>
         </scene>
-        <!--Результаты-->
+        <!--Result-->
         <scene sceneID="u06-LJ-oN1">
             <objects>
                 <viewController id="otA-ZB-ZZX" customClass="ResultsViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -300,17 +301,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="heu-lk-9qB">
-                                <rect key="frame" x="20" y="205.5" width="280" height="157.5"/>
+                                <rect key="frame" x="20" y="225" width="280" height="118"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы-🐶!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ty-HX-eP3">
-                                        <rect key="frame" x="63.5" y="0.0" width="153" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are - 🐶!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ty-HX-eP3">
+                                        <rect key="frame" x="24" y="0.0" width="232" height="51.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вам нравится быть с друзьями, Вы окружаете себя людьми, которые вам нравятся и всегда готовы помочь." textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvc-aV-nV6">
-                                        <rect key="frame" x="0.0" y="76" width="280" height="81.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dogs waiting for their frends to add them back to the group chat after they left dramatically." textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvc-aV-nV6">
+                                        <rect key="frame" x="0.0" y="67.5" width="280" height="50.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -325,7 +326,7 @@
                             <constraint firstAttribute="trailing" secondItem="heu-lk-9qB" secondAttribute="trailing" constant="20" id="zrs-xF-hJp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Результаты" id="fKp-YL-UQd">
+                    <navigationItem key="navigationItem" title="Result" id="fKp-YL-UQd">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Oef-0u-KZa">
                             <connections>
                                 <segue destination="x55-08-5VS" kind="unwind" unwindAction="unwindFor:" id="FY6-lc-lkM"/>

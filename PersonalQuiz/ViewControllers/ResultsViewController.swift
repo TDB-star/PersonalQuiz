@@ -27,7 +27,7 @@ class ResultsViewController: UIViewController {
       var frequencyOfAnimals: [AnimalType: Int] = [:]
       let animals = answerChoosen.map {$0.type}
         
-//        for answer in answerChoosen {  эта запись равносильна записи выше, те мы созжали // новый массив, который содержит только тип животных
+//        for answer in answerChoosen {  эта запись равносильна записи выше, те мы создали // новый массив, который содержит только тип животных
 //            animals.append(answer.type)
 //        }
  // перебираем наши типы животных и заносим в словарь
@@ -45,7 +45,7 @@ class ResultsViewController: UIViewController {
     }
     
     private func updateUI(with animal: AnimalType?) {
-        resultLabel.text = "Вы - \(animal?.rawValue ?? "👹")"
+        resultLabel.text = "You are - \(animal?.rawValue ?? "👹")"
         definitionLabel.text = animal?.definition ?? ""
     }
 }
